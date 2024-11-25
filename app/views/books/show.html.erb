@@ -19,7 +19,17 @@
             </td>
             <td><%= link_to @book_show.title, @book_show %></td>
             <td><%= @book_show.body %></td>
-            <td>♡0</td>
+            <td>
+              <% if @book_show.favorited_by?(current_user) %>
+                <%= link_to book_favorite_path(@book_show.id), method: :delete do %>
+                  ❤︎
+                <% end %>
+              <% else %>
+                <%= link_to book_favorite_path(@book_show.id), method: :post do %>
+                  ♡
+                <% end %>
+              <% end %>
+            </td>
             <td>コメント数:0</td>
 
 
