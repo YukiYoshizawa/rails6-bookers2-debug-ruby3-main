@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resource :favorite, only: [:create, :destroy]
   end
   resources :users, only: [:index,:show,:edit,:update] do
-    resource :relationshis, only: [:create, :destroy]
+    resource :relationsips, only: [:create, :destroy]
     get "followings" => "relationsips#followings", as: "followings"
     get "followers" => "relationsips#followers", as: "followers"
   end
