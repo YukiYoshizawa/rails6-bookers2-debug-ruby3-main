@@ -1,1 +1,10 @@
-followings_index
+<h1>Follow Users</h1>
+<% if @users.exists? %>
+  <%= render "/users/index", users: @users %>
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>
+
+<%# relationshipコントローラーでフォローしているユーザーの一覧を表示するためのアクションを定義しているので %>
+<%# ここにuser/indexを持ってきてもuser全員を表示するのではなく、すでに仕分けされた後のフォローしているユーザーだけを %>
+<%# 表示することができる。 %>
