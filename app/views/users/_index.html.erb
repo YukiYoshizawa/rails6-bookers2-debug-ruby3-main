@@ -11,6 +11,13 @@
       <tr>
         <td><%= image_tag user.get_profile_image, size: '50x50' %></td>
         <td><%= user.name %></td>
+        <td>フォロー数</td>
+        <td>フォロワー数</td>
+        <% if following?(current_user) %>
+          <td>フォローする</td>
+        <% else %>
+          <td>フォロー外す</td>
+        <% end %>
         <td><%= link_to 'Show', user_path(user.id) %></td>
       </tr>
     <% end %>
