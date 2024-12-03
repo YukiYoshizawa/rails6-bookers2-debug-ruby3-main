@@ -29,6 +29,9 @@ class User < ApplicationRecord
   # その際にsourceでpassive_relationshipsに関連しているRelationshipモデルで定義したfollowerを参照していることを記述。
 
   # ここまででフォロワーの関連付けが完了。
+
+  has_many :group_users, dependent: :destroy
+  # これはグループ機能のリレーション
   
   has_one_attached :profile_image
 
